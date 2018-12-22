@@ -31,5 +31,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/regester/test', 'HomeController@regist')->name('registertest');
 
 
+Route::post('/acount/details/{id}', 'HomeController@accountDetails')->name('account-details');
+
+
 //handle the result of the fitnance callback
 Route::get('/account/fitnance/callback', 'HomeController@handleFitnanceCallback')->name('fitnance-callback');

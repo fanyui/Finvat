@@ -4,7 +4,7 @@
 <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class=" container-fluid  ">
-                    <a class="navbar-brand" href="http://www.finvat.com"> CUENTAS </a>
+                    <a class="navbar-brand" href="{{route('home')}}"> CUENTAS </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -64,14 +64,17 @@
                                             <th>DETALLES</th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Dakota Rice</td>
-                                                <td>$36,738</td>
-                                                <td>Niger</td>
-                                                <td>Oud-Turnhout</td>
-                                            </tr>
-                                            
+                                            @isset($accounts)
+                                                @foreach ($accounts as $account)
+                                                    <tr>
+                                                        <td>{{$account->currency}}</td>
+                                                        <td>{{$account->first_movement}}</td>
+                                                        <td>{{$account->last_movement}}</td>
+                                                        <td></td>
+                                                        <td><a href="{{route('account-details', ['id' => $account->id])}}">Ver</a></td>
+                                                    </tr>
+                                                @endforeach
+                                            @endisset
 
                                         </tbody>
                                     </table>

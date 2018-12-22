@@ -87,7 +87,6 @@ class RegisterController extends Controller
         ]);
 
 
-
        // $user->notify(new ConfirmationEmail()); //uncomment this to get email sending working
 
         return $user;

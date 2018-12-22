@@ -67,7 +67,7 @@
                             <p>¿Aun no tienes cuenta? Regístrate</p>
                             <div class="form-group" align="center">
                             <div class="col-md-8 col-md-offset-4">
-                                <a class="btn btn-default" href="{{ route('password.request') }}">
+                                <a class="btn btn-default" href="{{ route('register') }}">
                                             SIGN IN
                                 </a>
                             </div>

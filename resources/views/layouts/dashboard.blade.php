@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Finvat') }}</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -36,7 +36,7 @@
 
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://http://finVat.io" class="simple-text">
+                    <a href="{{ config('app.url', 'www.finvat.com') }}" class="simple-text">
                         FINVAT
                     </a>
                 </div>
@@ -133,7 +133,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="http://www.Finvat.com">FinVat</a>, made with love for a better web
+                            <a href="{{ config('app.name', 'Finvat') }}">FinVat</a>, made with love for a better web
                         </p>
                     </nav>
                 </div>
