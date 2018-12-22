@@ -95,8 +95,8 @@ class HomeController extends Controller
         // 'merchant_signature'    => "198273ac249f7b9de717e3bdbb3e2f86598ec263",
         // 'request_code'       => "1543963806041",
         'request_code'       => $requestCode,
-        // 'callback_url'       => "http://localhost:8000/account/fitnance/callback",
-        'callback_url'       => route('fitnance-callback'),
+        'callback_url'       => "http://18.225.7.93/account/fitnance/callback",
+        // 'callback_url'       => route('fitnance-callback'),
       );
       $curl = curl_init();
 
