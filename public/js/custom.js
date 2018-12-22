@@ -39,6 +39,13 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
+        if (!document.getElementById('checkbox').checked) {
+            $('#checkbox').addClass('input-error');
+            next_step = false;
+        }
+        else{
+            $('#checkbox').removeClass('input-error');
+        }
     	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');

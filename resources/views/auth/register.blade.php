@@ -104,7 +104,7 @@
 
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="checkbox"> He leído y acepto los <a href="http://www.finvat.com/terminos">Términos y Condiciones del servicio.</a> 
+                          <input id="checkbox" type="checkbox" name="checkbox"> He leído y acepto los <a href="http://www.finvat.com/terminos">Términos y Condiciones del servicio.</a> 
 
                         </label>
                       </div>
@@ -196,7 +196,7 @@
                                     <li> Realiza pagos desde tu cuenta</li>
                                 </ol>
                             </div>
-                            <input type="hidden" name="business_plan" value="" id="business-plan-input" />
+                            <input type="hidden" name="business_plan" value="PAL" id="business-plan-input" />
                         </div>
 
                      <div class="f1-buttons">
