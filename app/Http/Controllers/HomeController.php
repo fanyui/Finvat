@@ -97,6 +97,8 @@ class HomeController extends Controller
         'request_code'       => $requestCode,
         'callback_url'       => "http://18.225.7.93/account/fitnance/callback",
         // 'callback_url'       => route('fitnance-callback'),
+        'callback_ok'       => "http://18.225.7.93/account",
+
       );
       $curl = curl_init();
 
