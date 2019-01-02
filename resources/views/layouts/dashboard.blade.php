@@ -18,6 +18,8 @@
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
             <script src="{{ asset('js/jquery.3.2.1.min.js') }}"></script>
+                    <script src="{{ asset('js/popper.min.js') }}"></script>
+
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 
@@ -96,12 +98,20 @@
         </div>
         <div class="main-panel">
             	@yield('navbar')
+
+
+
             <!-- content section -->
             <div class="content">
                 <div class="container-fluid">
                     @yield('content')
                 </div>
             </div>
+
+
+
+
+
             <!-- footer section -->
             <footer class="footer">
                 <div class="container">

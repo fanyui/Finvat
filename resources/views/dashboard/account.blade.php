@@ -31,26 +31,70 @@
 
                                         <div class="font-icon-list col-lg-4 col-md-3 col-sm-4 col-6">
                                             <a href="{{ route('account-add') }}">
-                                            <div class="font-icon-detail">
+                                                <div class="font-icon-detail">
 
-                                                <i class="nc-icon nc-simple-add"></i>
-                                                <small> &nbsp &nbsp AÑADIR CUENTA</small>
-                                            </div>
-                                            </a>
+                                                    <i class="nc-icon nc-simple-add"></i>
+                                                    <small> &nbsp &nbsp AÑADIR CUENTA</small>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="font-icon-list col-lg-4 col-md-3 col-sm-4 col-6">
-                                            <div class="font-icon-detail">
-                                                <i class="nc-icon nc-simple-delete"></i>
-                                                <span> &nbsp &nbsp ELIMINAR CUENTA</span>
-                                            </div>
+                                            <a href="#" data-toggle="modal" data-target="#myModal1" href="#pablo">
+                                                <div class="font-icon-detail">
+                                                    <i class="nc-icon nc-simple-delete"></i>
+                                                    <span>     &nbsp &nbsp ELIMINAR CUENTA</span>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                             <!-- Mini Modal -->
+                    <div class="modal fade modal-md modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                    <div class="text-center">
+                                       <p>¿Qué cuenta deseas eliminar?</p>
+                                    </div>
+                                </div>
+                                <div class="modal-body text-center">
+                                <div class="card card-plain table-plain-bg">
+                                <div class="card-body table-full-width table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>BANCO</th>
 
+                                            
+                                            <th>ESTADO</th>
+                                            <th>DETALLES</th>
+                                        </thead>
+                                        <tbody>
+                                            @isset($accounts)
+                                                @foreach ($accounts as $account)
+                                                    <tr>
+                                                        <td>{{$account->currency}}</td>
+                                                        <td></td>
+                                                        <td><a href="{{route('account-details', ['id' => $account->id])}}">Seleccionar</a></td>
+                                                    </tr>
+                                                @endforeach
+                                            @endisset
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-link btn-simple"></button>
+                                    <button type="button" class="btn btn-link btn-simple right" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  End Modal -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-plain table-plain-bg">
@@ -85,8 +129,15 @@
                 </div>
             </div>
 
+
+
+
 @endsection
 
+@section('customScript')
+
+
+@endsection
 
 <!-- <div class="row">
         <div class="col-md-8 col-md-offset-2">

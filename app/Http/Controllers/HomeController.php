@@ -80,9 +80,11 @@ class HomeController extends Controller
       return "Unnax ".base64_encode( $this->api_id.":".$this->api_code);
     }
 
-    public function accountDetails(Request $request)
+    public function accountDetails(Request $request, $id)
     {
-      return $request;
+      $account = Account::where("id", $id)->get();
+      // $account = Account::where("client_id", auth()->user()->id)->get();
+        return view('dashboard.accountdetails')->with("account", $account);
     }
     public function addAccount($value='')
     {
@@ -95,9 +97,9 @@ class HomeController extends Controller
         // 'merchant_signature'    => "198273ac249f7b9de717e3bdbb3e2f86598ec263",
         // 'request_code'       => "1543963806041",
         'request_code'       => $requestCode,
-        'callback_url'       => "http://18.225.7.93/account/fitnance/callback",
-        // 'callback_url'       => route('fitnance-callback'),
-        'callback_ok'       => "http://18.225.7.93/account",
+        // 'callback_url'       => "http://18.225.7.93/account/fitnance/callback",
+        'callback_url'       => route('fitnance-callback'),
+        'callback_ok'       => route('account'),
 
       );
       $curl = curl_init();
