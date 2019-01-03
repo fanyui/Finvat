@@ -35,4 +35,4 @@ Route::get('/acount/details/{id}', 'HomeController@accountDetails')->name('accou
 
 
 //handle the result of the fitnance callback
-Route::Post('/account/fitnance/callback', 'HomeController@handleFitnanceCallback')->name('fitnance-callback');
+Route::post('/account/fitnance/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');
