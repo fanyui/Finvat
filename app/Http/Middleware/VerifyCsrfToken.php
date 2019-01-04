@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        	'http://finvat.com/account/fitnance/callback',
+        	'http://finvat.com/account/fitnance/*',
     ];
 }
