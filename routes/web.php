@@ -35,4 +35,4 @@ Route::get('/acount/details/{id}', 'HomeController@accountDetails')->name('accou
 
 
 //handle the result of the fitnance callback: this method seems to be protected by CSRF so it has been moved to the api routes to exclude it 
-Route::post('/account/fitnance/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');
+Route::post('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');

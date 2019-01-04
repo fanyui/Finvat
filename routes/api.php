@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //handle the result of the fitnance callback
 
-Route::middleware('auth:api')->post('/account/fitnance/callback', 'GeneralController@handleFitnanceCallback')->name("api-callback");
+Route::middleware('api')->post('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name("api-callback");
