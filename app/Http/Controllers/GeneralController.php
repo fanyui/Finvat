@@ -41,8 +41,11 @@ class GeneralController extends Controller
         $callback = new CallBack();
         $callback->callback = "I have arrived";
         $callback->save();
-        // $this->data = $request->data;
+        $this->data = $request->data;
         $this->decryption(); //this will do the decryption and persisting of content of the response in the database
+        $call = new CallBack();
+        $call->callback = "Yes i ran the decryption check if there was data available or if i dif it with null";
+        $call->save();
 
 
         //redirect the user after successfully working on the callback information
