@@ -183,7 +183,7 @@ class HomeController extends Controller
         return redirect()->back()->with("message","Your current password doesn't match with the password you provided. Try again");
       }
 
-      if(strcmp($request->old_password, $request->confirm_password == 0)){
+      if(strcmp($request->old_password, $request->confirm_password) == 0){
         return redirect()->back()->with("message","New password cannot be thesame as current password please choose a different password ");
       }
 
@@ -201,8 +201,7 @@ class HomeController extends Controller
         $user->save();
 
         $user->save();
-        Flash::message('Your password has been updated!');
-        return back();
+        return back()->with("message","Your password has been updated successfully. ");
     }
 
 

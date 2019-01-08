@@ -38,7 +38,7 @@
                                             <div class="col-md-12 px-1">
                                                 <div class="form-group">
                                                     <label>¿Cuál es tu contraseña antigua?:</label>
-                                                    <input type="text" name="old_password" class="form-control"  placeholder="" value="">
+                                                    <input type="password" name="old_password" class="form-control"  placeholder="" value="">
                                                 </div>
                                             </div>
 
@@ -47,7 +47,7 @@
                                             <div class="col-md-12 px-1">
                                                 <div class="form-group">
                                                     <label>¿Cuál es tu nueva contraseña?:</label>
-                                                    <input type="text" name="new_password" class="form-control"  placeholder="" value="">
+                                                    <input type="password" name="new_password" class="form-control"  placeholder="" value="">
                                                 </div>
                                             </div>
 
@@ -56,7 +56,7 @@
                                             <div class="col-md-12 px-1">
                                                 <div class="form-group">
                                                     <label>Repite tu contraseña nueva:</label>
-                                                    <input type="text" name="confirm_password" class="form-control" placeholder="" value="">
+                                                    <input type="password" name="confirm_password" class="form-control" placeholder="" value="">
                                                 </div>
                                             </div>
 
