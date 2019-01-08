@@ -27,9 +27,10 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_description')->nullable();
             // $table->string('parent_category');
             // $table->string('child_category');
-            // $table->string('bank_id'); //foriegn key  from bank
-            // $table->string('account_id');//forign key from client
-            // $table->string('client_id');//forign key from client
+            $table->integer('bank_id')->nullable(); //foriegn key  from bank
+            $table->string('account')->nullable(); //foriegn key  from bank
+            // $table->string('account_id');//forign key from account
+            // $table->integer('client_id');//forign key from client
 
             $table->timestamps();
         });

@@ -69,6 +69,36 @@
                     </div>
 
 
+<!-- start of model for deleting -->
+
+                    <div class="modal center fade modal-md modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                    <div class="text-center">
+                                       <p>¿Estás seguro de eliminar tu cuenta?</p>
+                                    </div>
+                                </div>
+<!--                                 <div class="modal-body text-center">
+                                                                      
+                                </div> -->
+                                <div class="modal-footer">
+                                     <form method="post" action="{{route('account-delete', ['id' => $account[0]->id])}}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        
+                                    
+                                    <button type="submit" class="btn btn-link btn-simple"> SI </button>
+                                    </form>
+                                    <button type="button" class="btn btn-link btn-simple right" data-dismiss="modal">NO</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!-- end of modal for deleting -->
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
@@ -79,20 +109,22 @@
                                     <div class="row">
 
                                         <div class="font-icon-list col-lg-4 col-md-3 col-sm-4 col-6">
-                                            <a href="{{ route('account-add') }}">
+                                            <a href="#" data-toggle="modal" data-target="#myModal1" href="#pablo">
                                             <div class="font-icon-detail">
 
-                                                <i class="nc-icon nc-simple-add"></i>
-                                                <small> &nbsp &nbsp AÑADIR CUENTA</small>
+                                                <i class="nc-icon nc-simple-delete "></i>
+                                                <small> &nbsp &nbsp ELIMINAR CUENTA</small>
                                             </div>
                                             </a>
                                             </a>
                                         </div>
                                         <div class="font-icon-list col-lg-4 col-md-3 col-sm-4 col-6">
-                                            <div class="font-icon-detail">
-                                                <i class="nc-icon nc-simple-delete"></i>
-                                                <span> &nbsp &nbsp VOLVER</span>
-                                            </div>
+                                            <a href="{{ route('account') }}">
+                                                <div class="font-icon-detail">
+                                                    <i class="nc-icon nc-simple-add"></i>
+                                                    <small> &nbsp &nbsp VOLVER</small>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

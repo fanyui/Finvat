@@ -16,7 +16,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('client_id')->nullable(); //foreign key for linking to the client table
+            // $table->integer('client_id'); //foreign key for linking to the client table
 
             // $table->string('iban_number');
             $table->string('last_updated')->nullable();

@@ -82,10 +82,20 @@ class HomeController extends Controller
 
     public function accountDetails(Request $request, $id)
     {
+      
       $account = Account::where("id", $id)->get();
       // $account = Account::where("client_id", auth()->user()->id)->get();
         return view('dashboard.accountdetails')->with("account", $account);
     }
+
+    public function deleteAccount(Request $request, $id)
+    {
+        Account::find($id)->delete();
+
+        return "account deleted successfully";
+    }
+
+
     public function addAccount($value='')
     {
 

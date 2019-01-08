@@ -74,11 +74,17 @@
                                         <tbody>
                                             @isset($accounts)
                                                 @foreach ($accounts as $account)
+                                                    <form method="post" action="{{route('account-delete', ['id' => $account->id])}}">
+                                                        {{ csrf_field() }}
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    
+                                                
                                                     <tr>
                                                         <td>{{$account->currency}}</td>
                                                         <td></td>
-                                                        <td><a href="{{route('account-details', ['id' => $account->id])}}">Seleccionar</a></td>
+                                                        <td><Button type = "submit" class="btn btn-primary" >Seleccionar</Button>  </td>
                                                     </tr>
+                                                    </form>
                                                 @endforeach
                                             @endisset
 
@@ -110,6 +116,7 @@
                                         <tbody>
                                             @isset($accounts)
                                                 @foreach ($accounts as $account)
+
                                                     <tr>
                                                         <td>{{$account->currency}}</td>
                                                         <td>{{$account->first_movement}}</td>

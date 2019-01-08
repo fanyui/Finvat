@@ -31,8 +31,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/regester/test', 'HomeController@regist')->name('registertest');
 
 
-Route::get('/acount/details/{id}', 'HomeController@accountDetails')->name('account-details');
+Route::get('/account/details/{id}', 'HomeController@accountDetails')->name('account-details');
+
+Route::delete('/account/details/{id}', 'HomeController@deleteAccount')->name('account-delete');
 
 
 //handle the result of the fitnance callback: this method seems to be protected by CSRF so it has been moved to the api routes to exclude it 
-Route::post('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');
+Route::get('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');
