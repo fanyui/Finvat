@@ -35,6 +35,18 @@ Route::get('/account/details/{id}', 'HomeController@accountDetails')->name('acco
 
 Route::delete('/account/details/{id}', 'HomeController@deleteAccount')->name('account-delete');
 
+// route for finantial position
+Route::get('/financialstatus', 'HomeController@financialPosition')->name('financial-position');
+
+//route for financtial plan
+Route::get('/forecast', 'HomeController@financialPlan')->name('forecast');
+
+//route for profile settings
+Route::get('/profile', 'HomeController@profile')->name('profile');
+
+// update password 
+Route::post('/users/update', 'HomeController@updatePasword')->name('update-password');
+
 
 //handle the result of the fitnance callback: this method seems to be protected by CSRF so it has been moved to the api routes to exclude it 
 Route::get('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');

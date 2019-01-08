@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\User;
 use App\Account;
@@ -12,6 +13,8 @@ use App\Transaction;
 use App\Plan;
 use App\Gateway;
 use App\GatewayParsed;
+
+use Auth;
 
 class HomeController extends Controller
 {
@@ -96,6 +99,27 @@ class HomeController extends Controller
     }
 
 
+    // finanial position method
+    public function financialPosition(Request $request)
+    {
+      $account = Account::get();
+      if(empty($account))
+        return redirect('/home');
+      
+      return view("dashboard.finantialPosition");
+    }
+
+    //financial plan  method 
+    public function financialPlan(Request $request)
+    {
+      $account = Account::get();
+      if(empty($account))
+        return redirect('/home');
+
+      return view("dashboard.finantialPlan");
+    }
+
+
     public function addAccount($value='')
     {
 
@@ -145,19 +169,40 @@ class HomeController extends Controller
       return view('dashboard.addaccount')->with("response",$result);
     }
 
-    public function position($value='')
-    {
-        return view('dashboard.position');
-    }
-
-    public function plan($value='')
-    {
-        return view('dashboard.plan');
-    }
-
+    // profile setting page eg setting password etc
     public function profile($value='')
     {
-        return view('dashboard.profile');
+        $user = auth()->user();
+        return view('dashboard.profile')->with("user", $user);
+    }
+
+    // Update password 
+    public function updatePasword(Request $request)
+    {
+      if(!Hash::check($request->old_password, Auth::user()->password)){
+        return redirect()->back()->with("message","Your current password doesn't match with the password you provided. Try again");
+      }
+
+      if(strcmp($request->old_password, $request->confirm_password == 0)){
+        return redirect()->back()->with("message","New password cannot be thesame as current password please choose a different password ");
+      }
+
+
+
+
+        $data = $request->validate([
+
+          'old_password' => 'required',
+          'new_password' => 'required',
+          'confirm_password' => 'required',
+        ]);
+        $user = Auth::user();
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+
+        $user->save();
+        Flash::message('Your password has been updated!');
+        return back();
     }
 
 

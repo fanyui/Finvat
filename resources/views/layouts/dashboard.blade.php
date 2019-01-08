@@ -49,26 +49,26 @@
                             <p>HOME</p>
                         </a>
                     </li>
-                    <li class="{{ Request::is('account/*') ? 'active' : '' }}">
+                    <li class="{{ Request::is('account/*') || Request::is('account')  ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('account') }}">
                             <i class="nc-icon nc-money-coins"></i>
                             <p>CUENTAS</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" ">
+                    <li class="{{ Request::is('financialstatus') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('financial-position') }}">
                             <i class="nc-icon nc-notes"></i>
                             <p>POSICIÓN FINANCIERA</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" >
+                    <li class="{{ Request::is('forecast') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('forecast') }}">
                             <i class="nc-icon nc-paper-2"></i>
                             <p>PLAN FINANCIERO</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" >
+                    <li class="{{ Request::is('profile') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('profile') }}">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>PERFIL</p>
                         </a>
@@ -85,7 +85,7 @@
                                                      document.getElementById('logout-form').submit();">
                             <i class="nc-icon nc-alien-33"></i>
                             <p> 
-                                            Logout
+                                Logout
 
                              </p>
                         </a>
