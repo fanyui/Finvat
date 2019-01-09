@@ -33,18 +33,10 @@ class GeneralController extends Controller
 
 
 
-       public function handleFitnanceCallback(Request $request)
+       public function handleFitnanceCallback(Request $request, $user)
     {
-        // //if there are any errors in the result of the callback just in case.
-        // if ($request->has('error') || $request->has('denied')) {
-        //     $request->session()->flash('alert-danger', 'An error ocured . Please, try again or contact our help desk');
-        //     return redirect('login');
-        // }
 
         //this is just to check if the callback response is actually reaching here 
-        $callback = new CallBack();
-        $callback->callback = "I have arrived";
-        $callback->save();
 
         $cb = new CallBack();
         $cb->callback = $request->response_id;
@@ -53,18 +45,52 @@ class GeneralController extends Controller
 //this should save the data part of the response to the gatway in object for further usage
         $gateway = new Gateway();
         $gateway->response = $request->data;
+        $gateway->user = $user;
         $gateway->save();
 
         $this->data = $request->data;
 
-        $this->decryption(); //this will do the decryption and persisting of content of the response in the database
-        $call = new CallBack();
-        $call->callback = "Yes i ran the decryption check if there was data available or if i dif it with null";
-        $call->save();
+        $key = "znkopjzxxbnoqrqq";
+        $iv_info = "fi1513";
+
+        $size = 16;
+        $padding = '$';
 
 
-        //redirect the user after successfully working on the callback information
-        //return redirect("/");
+        $password = substr(str_pad($key, $size, $padding), 0, $size);
+        $iv= substr(str_pad($iv_info, $size, $padding), 0, $size);
+        $method='aes-128-cbc';
+        $decoded_data= base64_decode($request->data);
+
+        $decryptedMessage = openssl_decrypt($decoded_data , $method, $password, OPENSSL_RAW_DATA|OPENSSL_ZERO_PADDING, $iv);
+        $response = rtrim($decryptedMessage, "$");
+         $jsonDecodeResponse = json_decode($response);
+         // foreach ($jsonDecodeResponse->accounts as $key => $obj) {
+         //   echo $obj->currency;
+         // }
+
+        // $this->gatewayIn($jsonDecodeResponse);
+
+          //invoke the customer creation method to handling creation of clients
+        $this->createClients($jsonDecodeResponse->customers);
+
+        $this->createAccount($jsonDecodeResponse->summary->by_account);
+        $this->createBank($jsonDecodeResponse->summary->by_bank);
+
+        $this->createLoans($jsonDecodeResponse->loans);
+
+        $this->createTransaction($jsonDecodeResponse->statements);
+
+
+            //return $jsonDecodeResponse->customers; this qill return the full customers representation
+            //return $jsonDecodeResponse->customers;
+        return $response;
+        echo( rtrim($decryptedMessage, "$"));
+
+       while ($msg = openssl_error_string())
+            echo $msg . "<br />\n";
+        // die;
+       echo $decryptedMessage;
     
     }
 
@@ -91,7 +117,7 @@ class GeneralController extends Controller
          //   echo $obj->currency;
          // }
 
-        $this->gatewayIn($jsonDecodeResponse);
+        // $this->gatewayIn($jsonDecodeResponse);
 
           //invoke the customer creation method to handling creation of clients
         $this->createClients($jsonDecodeResponse->customers);

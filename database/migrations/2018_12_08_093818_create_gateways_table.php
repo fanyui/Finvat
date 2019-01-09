@@ -16,6 +16,7 @@ class CreateGatewaysTable extends Migration
         Schema::create('gateways', function (Blueprint $table) {
             $table->increments('id');
             $table->json('response');
+            $table->integer('user');
             
             $table->timestamps();
         });
