@@ -49,4 +49,4 @@ Route::post('/users/update', 'HomeController@updatePasword')->name('update-passw
 
 
 //handle the result of the fitnance callback: this method seems to be protected by CSRF so it has been moved to the api routes to exclude it 
-Route::get('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');
+Route::post('/account/fitnance/{user}/callback', 'GeneralController@handleFitnanceCallback')->name('fitnance-callback');

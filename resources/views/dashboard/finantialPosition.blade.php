@@ -29,7 +29,42 @@
                                 <div class="card-body all-icons">
                                     <div class="row">
 
-                                        <p> financial position screen </p>
+                                        <div class="card card-plain table-plain-bg">
+                                            <div class="card-body table-full-width table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <th>Enero</th>
+                                                        <th>Febrero </th>
+                                                        <th>Marzo</th>
+                                                        <th>Abril</th>
+                                                        <th>Mayo</th>
+                                                        <th>Junio</th>
+                                                        <th>Julio</th>
+                                                        <th>Agosto</th>
+                                                        <th>Septiembre</th>
+                                                        <th>Octubre</th>
+                                                        <th>Noviembre</th>
+                                                        <th>Diciembre</th>
+                                                        <th>TOTAL</th>
+                                                    </thead>
+                                                    <!-- <tbody>
+                                                        @isset($accounts)
+                                                            @foreach ($accounts as $account)
+
+                                                                <tr>
+                                                                    <td>{{$account->currency}}</td>
+                                                                    <td>{{$account->first_movement}}</td>
+                                                                    <td>{{$account->last_movement}}</td>
+                                                                    <td></td>
+                                                                    <td><a href="{{route('account-details', ['id' => $account->id])}}">Ver</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                        @endisset
+
+                                                    </tbody> -->
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
