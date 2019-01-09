@@ -46,9 +46,14 @@ class GeneralController extends Controller
         $gateway = new Gateway();
         $gateway->response = $request->data;
         $gateway->user = $user;
+        $gateway->trace_identifier = $request->trace_identifier;
+        $gateway->environment = $request->environment;
+        $gateway->triggered_event = $request->triggered_event;
+        $gateway->service = $request->service;
+        $gateway->date = $request->date;
         $gateway->save();
 
-        $this->data = $request->data;
+        // $this->data = $request->data;
 
         $key = "znkopjzxxbnoqrqq";
         $iv_info = "fi1513";

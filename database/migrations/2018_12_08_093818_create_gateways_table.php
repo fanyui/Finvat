@@ -17,6 +17,11 @@ class CreateGatewaysTable extends Migration
             $table->increments('id');
             $table->json('response');
             $table->integer('user');
+            $table->string('triggered_event')->nullable();
+            $table->string('service')->nullable();
+            $table->string('date')->nullable();
+            $table->string('environment')->nullable();
+            $table->string('trace_identifier')->nullable();
             
             $table->timestamps();
         });
