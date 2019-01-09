@@ -285,7 +285,7 @@ public function createTransaction($statements)
 
 
 
-      protected    $data= ""
+      protected    $data= "";
 
 
        
