@@ -35,18 +35,28 @@ class GeneralController extends Controller
 
        public function handleFitnanceCallback(Request $request)
     {
-        //if there are any errors in the result of the callback just in case.
-        if ($request->has('error') || $request->has('denied')) {
-            $request->session()->flash('alert-danger', 'An error ocured . Please, try again or contact our help desk');
-            return redirect('login');
-        }
+        // //if there are any errors in the result of the callback just in case.
+        // if ($request->has('error') || $request->has('denied')) {
+        //     $request->session()->flash('alert-danger', 'An error ocured . Please, try again or contact our help desk');
+        //     return redirect('login');
+        // }
 
         //this is just to check if the callback response is actually reaching here 
         $callback = new CallBack();
         $callback->callback = "I have arrived";
         $callback->save();
 
+        $cb = new CallBack();
+        $cb->callback = $request->response_id;
+        $cb->save();
+
+//this should save the data part of the response to the gatway in object for further usage
+        $gateway = new Gateway();
+        $gateway->response = $request->data;
+        $gateway->save();
+
         $this->data = $request->data;
+
         $this->decryption(); //this will do the decryption and persisting of content of the response in the database
         $call = new CallBack();
         $call->callback = "Yes i ran the decryption check if there was data available or if i dif it with null";
