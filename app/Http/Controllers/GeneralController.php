@@ -19,6 +19,7 @@ class GeneralController extends Controller
 
 
     protected $data= "";
+    protected $usr;
 
     public function welcome(Request $request)
     {
@@ -35,7 +36,7 @@ class GeneralController extends Controller
 
        public function handleFitnanceCallback(Request $request, $user)
     {
-
+    	$this->usr  = $user;
         //this is just to check if the callback response is actually reaching here 
 
         $cb = new CallBack();
@@ -159,7 +160,7 @@ class GeneralController extends Controller
 	        */
 
 	          $client = new Client();
-	          $client->user_id =  auth()->user()->id;
+	          $client->user_id =  $this->usr;
 	          $client->name = $customer->names;
 	          $client->phone = $customer->phones;
 
