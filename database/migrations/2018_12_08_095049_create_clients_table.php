@@ -25,7 +25,7 @@ class CreateClientsTable extends Migration
             // $table->string('telephone2')->nullable();
             // $table->string('telephone3')->nullable();
             $table->json("phone")->nullable();
-            $table->date('birthDate'); //watch out for data type
+            $table->date('birthDate')->nullable(); //watch out for data type
             // $table->string('account1')->nullable();
             // $table->string('account2')->nullable();
             // $table->string('account3')->nullable();
