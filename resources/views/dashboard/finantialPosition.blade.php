@@ -33,6 +33,8 @@
                                             <div class="card-body table-full-width table-responsive">
                                                 <table class="table table-hover">
                                                     <thead>
+                                                        <th></th>
+                                                        <th></th>
                                                         <th>Enero</th>
                                                         <th>Febrero </th>
                                                         <th>Marzo</th>

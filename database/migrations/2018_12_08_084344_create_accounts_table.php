@@ -31,6 +31,9 @@ class CreateAccountsTable extends Migration
             $table->string('last_movement')->nullable();
             $table->json('by_month');
             $table->json('total');
+
+            $table->string('bank')->nullable(); //mostly contains the bank names
+            $table->string('entity')->nullable(); // this  represents the account array in the response header of the array mostly contains the account names.
       
 
 

@@ -99,6 +99,39 @@ class GeneralController extends Controller
        echo $decryptedMessage;
     
     }
+       public function testDecrytion(Request $request)
+    {
+
+
+        // $this->data = $request->data;
+
+        $key = "znkopjzxxbnoqrqq";
+        $iv_info = "fi1513";
+
+        $size = 16;
+        $padding = '$';
+
+
+        $password = substr(str_pad($key, $size, $padding), 0, $size);
+        $iv= substr(str_pad($iv_info, $size, $padding), 0, $size);
+        $method='aes-128-cbc';
+        $decoded_data= base64_decode($request->data);
+
+        $decryptedMessage = openssl_decrypt($decoded_data , $method, $password, OPENSSL_RAW_DATA|OPENSSL_ZERO_PADDING, $iv);
+        $response = rtrim($decryptedMessage, "$");
+         $jsonDecodeResponse = json_decode($response);
+
+            //return $jsonDecodeResponse->customers; this qill return the full customers representation
+            //return $jsonDecodeResponse->customers;
+        return $response;
+        echo( rtrim($decryptedMessage, "$"));
+
+       while ($msg = openssl_error_string())
+            echo $msg . "<br />\n";
+        // die;
+       echo $decryptedMessage;
+    
+    }
 
 
 
@@ -191,7 +224,6 @@ class GeneralController extends Controller
 
 	          $acc->start_date  = $account->start_date;
 	          $acc->end_date  = $account->end_date;
-	          // $acc->entity = $account->entity;
 
 	          // $acc->last_updated =$account->last_updated;
 	          $acc->current_balance = $account->current_balance;
@@ -206,6 +238,8 @@ class GeneralController extends Controller
 
 	          $acc->by_month  = $account->by_month; //this is an array of objects take note
 	          $acc->total  = $account->total; //this is an array of objects take note
+	          $acc->entity = $account->accounts[0];  //array of strings
+	          $acc->bank = $account->banks[0];  //array of strings
 
 
 	          $acc->save();

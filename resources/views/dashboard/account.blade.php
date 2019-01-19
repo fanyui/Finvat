@@ -80,7 +80,7 @@
                                                     
                                                 
                                                     <tr>
-                                                        <td>{{$account->currency}}</td>
+                                                        <td>{{$account->bank}}</td>
                                                         <td></td>
                                                         <td><Button type = "submit" class="btn btn-primary" >Seleccionar</Button>  </td>
                                                     </tr>
@@ -118,7 +118,7 @@
                                                 @foreach ($accounts as $account)
 
                                                     <tr>
-                                                        <td>{{$account->currency}}</td>
+                                                        <td>{{$account->bank}}</td>
                                                         <td>{{$account->first_movement}}</td>
                                                         <td>{{$account->last_movement}}</td>
                                                         <td></td>

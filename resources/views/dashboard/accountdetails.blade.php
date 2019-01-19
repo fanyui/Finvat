@@ -38,7 +38,7 @@
                                                     <tr>
                                                    
                                                         <td> BANCO</td>
-                                                        <td>{{$account[0]->currency}}</td>
+                                                        <td>{{$account[0]->bank}}</td>
                                          
                                                     </tr>                                                
                                                     <tr>
