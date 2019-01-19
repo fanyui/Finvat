@@ -95,7 +95,7 @@ class HomeController extends Controller
     {
         Account::find($id)->delete();
 
-        return "account deleted successfully";
+        return redirect('/account');
     }
 
 
