@@ -18,63 +18,134 @@
 
 @section('content')
             
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
 
-                                </div>
-                                <div class="card-body all-icons">
-                                    <div class="row">
+                    </div>
+                    <div class="card-body all-icons">
+                        <div class="row">
 
-                                        <div class="card card-plain table-plain-bg">
-                                            <div class="card-body table-full-width table-responsive">
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th>Enero</th>
-                                                        <th>Febrero </th>
-                                                        <th>Marzo</th>
-                                                        <th>Abril</th>
-                                                        <th>Mayo</th>
-                                                        <th>Junio</th>
-                                                        <th>Julio</th>
-                                                        <th>Agosto</th>
-                                                        <th>Septiembre</th>
-                                                        <th>Octubre</th>
-                                                        <th>Noviembre</th>
-                                                        <th>Diciembre</th>
-                                                        <th>TOTAL</th>
-                                                    </thead>
-                                                    <!-- <tbody>
-                                                        @isset($accounts)
-                                                            @foreach ($accounts as $account)
+                            <div class="card card-plain table-plain-bg">
+                                <div class="card-body table-full-width table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <th>   </th>
+                                            <th></th>
+                                            <th>Enero</th>
+                                            <th>Febrero </th>
+                                            <th>Marzo</th>
+                                            <th>Abril</th>
+                                            <th>Mayo</th>
+                                            <th>Junio</th>
+                                            <th>Julio</th>
+                                            <th>Agosto</th>
+                                            <th>Septiembre</th>
+                                            <th>Octubre</th>
+                                            <th>Noviembre</th>
+                                            <th>Diciembre</th>
+                                            <th>TOTAL</th>
+                                        </thead>
+                                    </table>
+                                            <p>INGRESOS</p>
+                                            <table class="table table-bordered">
+                                        <thead>
+                                            <th>  
+                                                <a class="" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">+ </a>
 
-                                                                <tr>
-                                                                    <td>{{$account->currency}}</td>
-                                                                    <td>{{$account->first_movement}}</td>
-                                                                    <td>{{$account->last_movement}}</td>
-                                                                    <td></td>
-                                                                    <td><a href="{{route('account-details', ['id' => $account->id])}}">Ver</a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                        @endisset
-
-                                                    </tbody> -->
-                                                </table>
+                                             </th>
+                                            <th> Loans</th>
+                                            <th>12</th>
+                                            <th>23.4 </th>
+                                            <th>13</th>
+                                            <th>44</th>
+                                            <th>7</th>
+                                            <th>19</th>
+                                            <th>20</th>
+                                            <th>20</th>
+                                            <th>9</th>
+                                            <th>23</th>
+                                            <th>45</th>
+                                            <th>5</th>
+                                            <th>8</th>
+                                        </thead>
+                                    
+                                        </table>
+                                           
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                    <div class="card card-body">
+                                                        <table class="table table-bordered">
+                                                            <thead >
+                                                                <th>Car Leasing </th>
+                                                                <th>12</th>
+                                                                <th>23.4 </th>
+                                                                <th>13</th>
+                                                                <th>44</th>
+                                                                <th>7</th>
+                                                                <th>19</th>
+                                                                <th>20</th>
+                                                                <th>20</th>
+                                                                <th>9</th>
+                                                                <th>23</th>
+                                                                <th>45</th>
+                                                                <th>5</th>
+                                                                <th>8</th>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+
+                                         <p>GASTOS</p>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <th>  
+                                                        <a  data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">+ </a>
+
+                                                         </th>
+                                                        <th>Insurance</th>
+                                                        <th>12</th>
+                                                        <th>23.4 </th>
+                                                        <th>13</th>
+                                                        <th>44</th>
+                                                        <th>7</th>
+                                                        <th>19</th>
+                                                        <th>20</th>
+                                                        <th>20</th>
+                                                        <th>9</th>
+                                                        <th>23</th>
+                                                        <th>45</th>
+                                                        <th>5</th>
+                                                        <th>8</th>
+                                                    </thead>
+                                                    
+                                                </table>
+                                            <div class="col">
+                                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                                  <div class="card card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                                  </div>
+                                                </div>
+                                            </div>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                         
                 </div>
             </div>
+        </div>
+             
+    </div>
+</div>
+
 
 
 
