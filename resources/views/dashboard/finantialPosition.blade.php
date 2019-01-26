@@ -60,7 +60,7 @@
                                         <tbody>
                                                                     <tr> <td>INGRESOS</td> </tr>
                                             <tr>
-                                                <td><a id="addrowLoan" class="" >+ </a></td>
+                                                <td><a id="addrowLoan" class="" >- </a></td>
                                                 <td> other income</td>
                                                 <td>12</td>
                                                 <td>23.4 </td>

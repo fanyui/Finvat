@@ -27,11 +27,6 @@
                             <div class="card card-plain table-plain-bg">
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover">
-                                        <thead>
-                                            <th>BANCO</th>
-                                            <th>FECHA DE PRIMERA CONEXIÓN </th>
-                                            
-                                        </thead>
                                         <tbody>
                                             @isset($account)
                                                 
