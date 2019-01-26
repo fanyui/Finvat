@@ -20,18 +20,26 @@
             
 <div class="content">
     <div class="container-fluid">
+        <div class="row pull-right">
+            <a class="btn btn-primary pull-right">2019</a>  
+            <span> &nbsp</span>        
+            <a class="btn btn-primary pull-right" >2018 </a>
+
+            
+        </div>
+        <br>
+        <hr>
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="">
 
-                    </div>
-                    <div class="card-body all-icons">
+                    <div class="">
                         <div class="row">
 
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-hover">
+                            <div class=" table-plain-bg">
+                                <div class=" table-responsive">
+                                    <table class="table loans ">
+
                                         <thead>
                                             <th>   </th>
                                             <th></th>
@@ -49,15 +57,52 @@
                                             <th>Diciembre</th>
                                             <th>TOTAL</th>
                                         </thead>
+                                        <tbody>
+                                                                    <tr> <td>INGRESOS</td> </tr>
+                                            <tr>
+                                                <td><a id="addrowLoan" class="" >+ </a></td>
+                                                <td> other income</td>
+                                                <td>12</td>
+                                                <td>23.4 </td>
+                                                <td>13</td>
+                                                <td>44</td>
+                                                <td>7</td>
+                                                <td>19</td>
+                                                <td>20</td>
+                                                <td>20</td>
+                                                <td>9</td>
+                                                <td>23</td>
+                                                <td>45</td>
+                                                <td>5</td>
+                                                <td>8</td>
+                                            </tr>                                            
+                                            <tr>
+                                                <td><a id="addrowLoan" class="" role="button" >+ </a></td>
+                                                <td> Loans</td>
+                                                <td>12</td>
+                                                <td>23.4 </td>
+                                                <td>13</td>
+                                                <td>44</td>
+                                                <td>7</td>
+                                                <td>19</td>
+                                                <td>20</td>
+                                                <td>20</td>
+                                                <td>9</td>
+                                                <td>23</td>
+                                                <td>45</td>
+                                                <td>5</td>
+                                                <td>8</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
-                                            <p>INGRESOS</p>
+                                            <p>GASTOS</p>
                                             <table class="table table-bordered">
                                         <thead>
                                             <th>  
                                                 <a class="" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">+ </a>
 
                                              </th>
-                                            <th> Loans</th>
+                                            <th> Insurance</th>
                                             <th>12</th>
                                             <th>23.4 </th>
                                             <th>13</th>
@@ -78,10 +123,11 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                                    <div class="card card-body">
-                                                        <table class="table table-bordered">
+                                                    <div ">
+                                                        <table class="table  table-bordered ">
                                                             <thead >
-                                                                <th>Car Leasing </th>
+                                                                <th> &nbsp</th>
+                                                                <th>Leasing</th>
                                                                 <th>12</th>
                                                                 <th>23.4 </th>
                                                                 <th>13</th>
@@ -101,40 +147,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                         <p>GASTOS</p>
-                                                <table class="table table-bordered">
-                                                    <thead>
-                                                        <th>  
-                                                        <a  data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">+ </a>
-
-                                                         </th>
-                                                        <th>Insurance</th>
-                                                        <th>12</th>
-                                                        <th>23.4 </th>
-                                                        <th>13</th>
-                                                        <th>44</th>
-                                                        <th>7</th>
-                                                        <th>19</th>
-                                                        <th>20</th>
-                                                        <th>20</th>
-                                                        <th>9</th>
-                                                        <th>23</th>
-                                                        <th>45</th>
-                                                        <th>5</th>
-                                                        <th>8</th>
-                                                    </thead>
-                                                    
-                                                </table>
-                                            <div class="col">
-                                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                                  <div class="card card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                                  </div>
-                                                </div>
-                                            </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -147,7 +159,44 @@
 </div>
 
 
+<script type="text/javascript">
+    
+    $(document).ready(function () {
 
+    $("#addrowLoan").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td>'  + '</td>';
+        cols += '<td>'  +'Leasing'+ '</td>';
+
+        cols += '<td>' + 11 + '</td>';
+        cols += '<td>' + 34 + '</td>';
+        cols += '<td>' + 2 + '</td>';
+        cols += '<td>' + 12 + '</td>';
+        cols += '<td>' + 3 + '</td>';
+        cols += '<td>' + 19+ '</td>';
+        cols += '<td>' + 54 + '</td>';
+        cols += '<td>' + 98+ '</td>';
+        cols += '<td>' + 22+ '</td>';
+        cols += '<td>' + 30 + '</td>';
+        cols += '<td>' + 30 + '</td>';
+        cols += '<td>' + 30 + '</td>';
+        cols += '<td>' + 30 + '</td>';
+        newRow.append(cols);
+        $("table.loans").append(newRow);
+    });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();       
+        counter -= 1
+    });
+
+
+});
+</script>
 
 
 @endsection
@@ -157,24 +206,4 @@
 
 @endsection
 
-<!-- <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div> -->
