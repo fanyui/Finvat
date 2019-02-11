@@ -25,8 +25,20 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_iban')->nullable();
             $table->string('transaction_office')->nullable();
             $table->string('transaction_description')->nullable();
-            // $table->string('parent_category');
-            // $table->string('child_category');
+
+            /* Critical section these filed here below can be resource consuming so there is a relationship to the category table where you can get these
+            but they are still field here to maximize runtime and querry time()
+                $table->string('parent_category');
+                $table->string('child_category');
+                    $table->string('category');
+                    $table->string('sub_category');
+            */
+
+                $table->string('parent_category')->nullable();
+                $table->string('child_category')->nullable();
+            $table->integer('category_id')->nullable(); //foriegn key  from category table
+            //End of critical section
+            $table->json('concepts')->nullable();
             $table->integer('bank_id')->nullable(); //foriegn key  from bank
             $table->string('account')->nullable(); //foriegn key  from bank
             // $table->string('account_id');//forign key from account

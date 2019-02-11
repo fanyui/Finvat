@@ -17,6 +17,7 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
 
             // $table->integer('client_id'); //foreign key for linking to the client table
+            $table->integer('user_id'); //foreign key for linking to the user table
 
             // $table->string('iban_number');
             $table->string('last_updated')->nullable();

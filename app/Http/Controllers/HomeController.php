@@ -13,6 +13,7 @@ use App\Transaction;
 use App\Plan;
 use App\Gateway;
 use App\GatewayParsed;
+use App\Category;
 
 use Auth;
 
@@ -73,8 +74,8 @@ class HomeController extends Controller
 
     public function account($value='')
     {
-      $account = Account::get();
-      // $account = Account::where("client_id", auth()->user()->id)->get();
+      // $account = Account::get();
+      $account = Account::where("user_id", auth()->user()->id)->get();
         return view('dashboard.account')->with("accounts", $account);
     }
 
@@ -102,9 +103,16 @@ class HomeController extends Controller
     // finanial position method
     public function financialPosition(Request $request)
     {
+      $category = Category::get();
       $account = Account::get();
       if(empty($account))
         return redirect('/home');
+      // foreach ($category as $c) {
+      // run throught the possible types of categories and check inside the list of result returned from the api to verify that it found inside so as to know wich category it belongs to 
+      // }
+
+
+
       
       return view("dashboard.finantialPosition");
     }

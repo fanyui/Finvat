@@ -11,6 +11,7 @@ use App\Transaction;
 use App\Plan;
 use App\Gateway;
 use App\GatewayParsed;
+use App\Category;
 
 use Illuminate\Http\Request;
 
@@ -221,6 +222,7 @@ class GeneralController extends Controller
 	        */
 
 	          $acc = new Account();
+	          $acc->user_id =  $this->usr;
 
 	          $acc->start_date  = $account->start_date;
 	          $acc->end_date  = $account->end_date;
@@ -327,8 +329,22 @@ class GeneralController extends Controller
 
 
 	public function createTransaction($statements){
+      	$category = Category::get();
+
 		  foreach ($statements as $key => $transaction) {
 		    $transactn = new Transaction();
+		          foreach ($category as $c) {
+		          	if (preg_match("/".$c->key_word."/", $transaction->concepts[0])){
+		          		$transactn->category_id = $c->id;
+					    $transactn->parent_category =  $c->category;
+					    $transactn->child_category =  $c->sub_category;
+		          	}
+		          	else {
+		          		$transactn->category_id = 1;
+		       //    		 $transactn->parent_category = "default";// $c->category;
+					    // $transactn->child_category = "default"; // $c->sub_cat
+		          	}
+		          }
 		    $transactn->transaction_date = $transaction->deposit_date;
 		    $transactn->transaction_value = $transaction->value_date;
 		    $transactn->transaction_amount = $transaction->amount;
@@ -338,8 +354,15 @@ class GeneralController extends Controller
 		    // $transactn->transaction_iban = $transaction->balance;
 		    $transactn->transaction_office = $transaction->office;
 		    $transactn->transaction_description = $transaction->bank_reference;
+		    
+		    /*critical there is a relationship to the category and this is just acting
+		     as a supporting field to optimize the querry when retrieving it.
+				
 		    // $transactn->parent_category = $transaction->parent_category;
 		    // $transactn->child_category = $transaction->child_category;
+			*/
+
+		    $transactn->concepts = json_encode($transaction->concepts);
 		    $transactn->bank_id = $transaction->bank_id;
 		    $transactn->account = $transaction->account;
 		                // $table->string('bank_id'); //foriegn key  from bank
