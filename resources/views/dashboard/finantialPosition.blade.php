@@ -38,11 +38,15 @@
 
                             <div class=" table-plain-bg">
                                 <div class=" table-responsive">
-                                    <table class="table loans ">
 
+                                            <p><b>INGRESOS</b></p>
+                                             <table class="table table-bordered">
                                         <thead>
-                                            <th>   </th>
-                                            <th></th>
+                                            <th>  
+                                                <a class="" data-toggle="collapse" href="#multiCollapseLoan" role="button" aria-expanded="false" aria-controls="multiCollapseLoan">+ </a>
+
+                                             </th>
+                                            <th style="color: orange"> Other incomes</th>
                                             <th>Enero</th>
                                             <th>Febrero </th>
                                             <th>Marzo</th>
@@ -56,21 +60,37 @@
                                             <th>Noviembre</th>
                                             <th>Diciembre</th>
                                             <th>TOTAL</th>
-                                        </thead>
-                                        <tbody>
-                                                                   
 
-                                           
-                                        </tbody>
-                                    </table>
-                                            <p>GASTOS</p>
+                                        </thead>
+
+                                                            <tbody class="collapse multi-collapse" id="multiCollapseLoan">
+                            
+                                                            </tbody>
+
+                                    
+                                        </table>
+
+                                            <p><b>GASTOS</b></p>
                                             <table class="table table-bordered">
                                         <thead>
                                             <th>  
                                                 <a class="" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">+ </a>
 
                                              </th>
-                                            <th> Insurance</th>
+                                            <th style="color: orange"> Insurance</th>
+                                            <th>Enero</th>
+                                            <th>Febrero </th>
+                                            <th>Marzo</th>
+                                            <th>Abril</th>
+                                            <th>Mayo</th>
+                                            <th>Junio</th>
+                                            <th>Julio</th>
+                                            <th>Agosto</th>
+                                            <th>Septiembre</th>
+                                            <th>Octubre</th>
+                                            <th>Noviembre</th>
+                                            <th>Diciembre</th>
+                                            <th>TOTAL</th>
 
                                         </thead>
 
@@ -191,7 +211,20 @@
                                                 <a class="" data-toggle="collapse" href="#multiCollapseMarketing" role="button" aria-expanded="false" aria-controls="multiCollapseMarketing">+ </a>
 
                                              </th>
-                                            <th> Marketing</th>
+                                            <th style="color: orange"> Marketing</th>
+                                            <th>Enero</th>
+                                            <th>Febrero </th>
+                                            <th>Marzo</th>
+                                            <th>Abril</th>
+                                            <th>Mayo</th>
+                                            <th>Junio</th>
+                                            <th>Julio</th>
+                                            <th>Agosto</th>
+                                            <th>Septiembre</th>
+                                            <th>Octubre</th>
+                                            <th>Noviembre</th>
+                                            <th>Diciembre</th>
+                                            <th>TOTAL</th>
 
                                         </thead>
 
@@ -347,9 +380,21 @@
                                         <thead>
                                             <th>  
                                                 <a class="" data-toggle="collapse" href="#multiCollapseEquipamiento" role="button" aria-expanded="false" aria-controls="multiCollapseEquipamiento">+ </a>
-                                                &nbsp
                                              </th>
-                                            <th>Equipamiento</th>
+                                            <th style="color: orange">Equipamiento</th>
+                                            <th>Enero</th>
+                                            <th>Febrero </th>
+                                            <th>Marzo</th>
+                                            <th>Abril</th>
+                                            <th>Mayo</th>
+                                            <th>Junio</th>
+                                            <th>Julio</th>
+                                            <th>Agosto</th>
+                                            <th>Septiembre</th>
+                                            <th>Octubre</th>
+                                            <th>Noviembre</th>
+                                            <th>Diciembre</th>
+                                            <th>TOTAL</th>
 
                                         </thead>
 
@@ -359,7 +404,7 @@
 
                                                 @for ($i = 0; $i < $maxEquipamiento; $i++)
                                             <tr>
-                                                <td>-</td>
+                                                <td>></td>
                                                 <td>  </td>
 
                                            
@@ -505,9 +550,21 @@
                                         <thead>
                                             <th>  
                                                 <a class="" data-toggle="collapse" href="#multiCollapseelCortTransactions" role="button" aria-expanded="false" aria-controls="multiCollapseelCortTransactions">+ </a>
-                                                &nbsp&nbsp
                                              </th>
-                                            <th>El Corte Inglés</th>
+                                            <th style="color: orange">El Corte Inglés</th>
+                                            <th>Enero</th>
+                                            <th>Febrero </th>
+                                            <th>Marzo</th>
+                                            <th>Abril</th>
+                                            <th>Mayo</th>
+                                            <th>Junio</th>
+                                            <th>Julio</th>
+                                            <th>Agosto</th>
+                                            <th>Septiembre</th>
+                                            <th>Octubre</th>
+                                            <th>Noviembre</th>
+                                            <th>Diciembre</th>
+                                            <th>TOTAL</th>
                                             
                                         </thead>
 
@@ -517,7 +574,7 @@
 
                                                 @for ($i = 0; $i < $maxelCort; $i++)
                                             <tr>
-                                                <td>-></td>
+                                                <td>></td>
                                                 <td>  </td>
 
                                            

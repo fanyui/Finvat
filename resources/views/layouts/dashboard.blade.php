@@ -28,7 +28,7 @@
 <body>
     <div class="container-fluid">
     	<div class="wrapper">
-        <div class="sidebar"  >
+        <div class="sidebar"  data-color="orange" >
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
