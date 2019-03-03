@@ -160,7 +160,18 @@
                                                     $transaction->dec[$i]->transaction_amount
                                                     }}
                                                 @endif</td>
-                                                <td>8</td>
+                                                <td>
+                                                    
+                                                    @php
+                                                        $sum = 0;
+                                                        if( array_key_exist($i,$transaction->dec)  )
+                                                        $sum = $sum + $transaction->dec[$i]->transaction_amount;
+
+                                                        if( array_key_exist(i,$transaction->dec[$i]->transaction_amount)  )
+                                                        $sum = $sum + $transaction->dec[$i]->transaction_amount;
+
+                                                    @endphp
+                                                </td>
 
                                             </tr>
 
@@ -270,7 +281,56 @@
                                                     $marketingTransaction->dec[$i]->transaction_amount
                                                     }}
                                                 @endif</td>
-                                                <td>8</td>
+                                                <td>
+                                                     
+                                                    @php
+                                                        $sum = 0;
+                                                        if(count($marketingTransaction->jan) > $i){
+                                                         $sum += $marketingTransaction->jan[$i]->transaction_amount;
+                                                        }
+                                                        if(count($marketingTransaction->feb) > $i){
+                                                         $sum += $marketingTransaction->feb[$i]->transaction_amount;
+                                                        }
+                                                        if(count($marketingTransaction->mar) > $i){
+                                                         $sum += $marketingTransaction->mar[$i]->transaction_amount;
+                                                        }
+                                                        if(count($marketingTransaction->apr) > $i){
+                                                         $sum += $marketingTransaction->apr[$i]->transaction_amount;
+                                                        }
+                                                        if(count($marketingTransaction->may) > $i){
+                                                         $sum += $marketingTransaction->may[$i]->transaction_amount;
+                                                        }
+                                                        if(count($marketingTransaction->jun) > $i){
+                                                         $sum += $marketingTransaction->jun[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->jul) > $i){
+                                                         $sum += $marketingTransaction->jul[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->aug) > $i){
+                                                         $sum += $marketingTransaction->aug[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->sep) > $i){
+                                                         $sum += $marketingTransaction->sep[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->oct) > $i){
+                                                         $sum += $marketingTransaction->oct[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->nov) > $i){
+                                                         $sum += $marketingTransaction->nov[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($marketingTransaction->dec) > $i){
+                                                         $sum += $marketingTransaction->dec[$i]->transaction_amount;
+                                                        }
+
+                                                        echo($sum)
+                                                    @endphp
+                                                </td>
 
                                             </tr>
 
@@ -379,7 +439,55 @@
                                                     $equipamientoTransaction->dec[$i]->transaction_amount
                                                     }}
                                                 @endif</td>
-                                                <td>8</td>
+                                                <td>                                                     
+                                                    @php
+                                                        $sum = 0;
+                                                        if(count($equipamientoTransaction->jan) > $i){
+                                                         $sum += $equipamientoTransaction->jan[$i]->transaction_amount;
+                                                        }
+                                                        if(count($equipamientoTransaction->feb) > $i){
+                                                         $sum += $equipamientoTransaction->feb[$i]->transaction_amount;
+                                                        }
+                                                        if(count($equipamientoTransaction->mar) > $i){
+                                                         $sum += $equipamientoTransaction->mar[$i]->transaction_amount;
+                                                        }
+                                                        if(count($equipamientoTransaction->apr) > $i){
+                                                         $sum += $equipamientoTransaction->apr[$i]->transaction_amount;
+                                                        }
+                                                        if(count($equipamientoTransaction->may) > $i){
+                                                         $sum += $equipamientoTransaction->may[$i]->transaction_amount;
+                                                        }
+                                                        if(count($equipamientoTransaction->jun) > $i){
+                                                         $sum += $equipamientoTransaction->jun[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->jul) > $i){
+                                                         $sum += $equipamientoTransaction->jul[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->aug) > $i){
+                                                         $sum += $equipamientoTransaction->aug[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->sep) > $i){
+                                                         $sum += $equipamientoTransaction->sep[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->oct) > $i){
+                                                         $sum += $equipamientoTransaction->oct[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->nov) > $i){
+                                                         $sum += $equipamientoTransaction->nov[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($equipamientoTransaction->dec) > $i){
+                                                         $sum += $equipamientoTransaction->dec[$i]->transaction_amount;
+                                                        }
+
+                                                        echo($sum)
+                                                    @endphp
+                                                </td>
 
                                             </tr>
 
@@ -489,7 +597,55 @@
                                                     $elCortTransactions->dec[$i]->transaction_amount
                                                     }}
                                                 @endif</td>
-                                                <td>8</td>
+                                                <td>
+                                                                                                        @php
+                                                        $sum = 0;
+                                                        if(count($elCortTransactions->jan) > $i){
+                                                         $sum += $elCortTransactions->jan[$i]->transaction_amount;
+                                                        }
+                                                        if(count($elCortTransactions->feb) > $i){
+                                                         $sum += $elCortTransactions->feb[$i]->transaction_amount;
+                                                        }
+                                                        if(count($elCortTransactions->mar) > $i){
+                                                         $sum += $elCortTransactions->mar[$i]->transaction_amount;
+                                                        }
+                                                        if(count($elCortTransactions->apr) > $i){
+                                                         $sum += $elCortTransactions->apr[$i]->transaction_amount;
+                                                        }
+                                                        if(count($elCortTransactions->may) > $i){
+                                                         $sum += $elCortTransactions->may[$i]->transaction_amount;
+                                                        }
+                                                        if(count($elCortTransactions->jun) > $i){
+                                                         $sum += $elCortTransactions->jun[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->jul) > $i){
+                                                         $sum += $elCortTransactions->jul[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->aug) > $i){
+                                                         $sum += $elCortTransactions->aug[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->sep) > $i){
+                                                         $sum += $elCortTransactions->sep[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->oct) > $i){
+                                                         $sum += $elCortTransactions->oct[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->nov) > $i){
+                                                         $sum += $elCortTransactions->nov[$i]->transaction_amount;
+                                                        }
+
+                                                        if(count($elCortTransactions->dec) > $i){
+                                                         $sum += $elCortTransactions->dec[$i]->transaction_amount;
+                                                        }
+
+                                                        echo($sum)
+                                                    @endphp
+                                                </td>
 
                                             </tr>
 
