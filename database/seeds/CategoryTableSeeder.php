@@ -147,25 +147,83 @@ class CategoryTableSeeder extends Seeder
 	       'sub_category' => 'Ikea',
 	    ),
 	    // ENDED AT LINE NUMBER 20 IN THE SPREAD SHEETS
-	    // array(
-	    //    'type' => 'EXPENSE',
-	    //    'key_word' => 'INSTAPAGE',
-	    //    'category' => 'Marketing',
-	    //    'sub_category' => 'Instagram',
-	    // ),
-	    // array(
-	    //    'type' => 'EXPENSE',
-	    //    'key_word' => 'INSTAPAGE',
-	    //    'category' => 'Marketing',
-	    //    'sub_category' => 'Instagram',
-	    // ),
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'VERDECORA',
+	       'category' => 'Equipamiento',
+	       'sub_category' => 'Verdecora',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'SEGUROS SOCIALES',
+	       'category' => 'Seguridad Social',
+	       'sub_category' => 'Seguros Sociales',
+	    ),
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'TGSS. COTIZACION',
+	       'category' => 'Seguridad Social',
+	       'sub_category' => 'Seguros Sociales',
+	    ),
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'IMPUESTOS',
+	       'category' => 'Impuestos',
+	       'sub_category' => '',
+	    ),
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'RENFE',
+	       'category' => 'Viajes',
+	       'sub_category' => 'Tren',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'RYANAIR',
+	       'category' => 'Viajes',
+	       'sub_category' => 'Vuelos',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'IBERIA',
+	       'category' => 'Viajes',
+	       'sub_category' => 'Vuelos',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'EDREAMS',
+	       'category' => 'Viajes',
+	       'sub_category' => 'Vuelos',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'HOTEL',
+	       'category' => 'Viajes',
+	       'sub_category' => 'Hotel',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'GO DADDY',
+	       'category' => 'Web',
+	       'sub_category' => 'Hosting & Registro',
+	    ),
+
+	    array(
+	       'type' => 'EXPENSE',
+	       'key_word' => 'GODADDY',
+	       'category' => 'Web',
+	       'sub_category' => 'Hosting & Registro',
+	    ),
 
    ));
     }
 }
-
-
-
 
 
 
