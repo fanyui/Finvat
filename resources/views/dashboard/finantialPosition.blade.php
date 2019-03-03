@@ -21,9 +21,9 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row pull-right">
-            <a class="btn btn-primary pull-right">2019</a>  
+            <a href="{{route('financial-position')}}?year=2019" class="btn btn-primary pull-right">2019</a>  
             <span> &nbsp</span>        
-            <a class="btn btn-primary pull-right" >2018 </a>
+            <a href="{{route('financial-position')}}?year=2018" class="btn btn-primary pull-right" >2018 </a>
 
             
         </div>
@@ -58,41 +58,9 @@
                                             <th>TOTAL</th>
                                         </thead>
                                         <tbody>
-                                                                    <tr> <td>INGRESOS</td> </tr>
-                                            <tr>
-                                                <td><a id="addrowLoan" class="" >- </a></td>
-                                                <td> other income</td>
-                                                <td>12</td>
-                                                <td>23.4 </td>
-                                                <td>13</td>
-                                                <td>44</td>
-                                                <td>7</td>
-                                                <td>19</td>
-                                                <td>20</td>
-                                                <td>20</td>
-                                                <td>9</td>
-                                                <td>23</td>
-                                                <td>45</td>
-                                                <td>5</td>
-                                                <td>8</td>
-                                            </tr>                                            
-                                            <tr>
-                                                <td><a id="addrowLoan" class="" role="button" >+ </a></td>
-                                                <td> Loans</td>
-                                                <td>12</td>
-                                                <td>23.4 </td>
-                                                <td>13</td>
-                                                <td>44</td>
-                                                <td>7</td>
-                                                <td>19</td>
-                                                <td>20</td>
-                                                <td>20</td>
-                                                <td>9</td>
-                                                <td>23</td>
-                                                <td>45</td>
-                                                <td>5</td>
-                                                <td>8</td>
-                                            </tr>
+                                                                   
+
+                                           
                                         </tbody>
                                     </table>
                                             <p>GASTOS</p>
@@ -103,50 +71,437 @@
 
                                              </th>
                                             <th> Insurance</th>
-                                            <th>12</th>
-                                            <th>23.4 </th>
-                                            <th>13</th>
-                                            <th>44</th>
-                                            <th>7</th>
-                                            <th>19</th>
-                                            <th>20</th>
-                                            <th>20</th>
-                                            <th>9</th>
-                                            <th>23</th>
-                                            <th>45</th>
-                                            <th>5</th>
-                                            <th>8</th>
+
                                         </thead>
+
+                                                            <tbody class="collapse multi-collapse" id="multiCollapseExample1">
+                                                                 @isset($transaction)
+                                            @isset($max)
+
+                                                @for ($i = 0; $i < $max; $i++)
+                                            <tr>
+                                                <td>></td>
+                                                <td>  </td>
+
+                                           
+                                                <td>@if(count($transaction->jan) > $i)
+                                                    {{
+
+                                                    $transaction->jan[$i]->transaction_amount
+                                                    }}
+                                                @else 
+
+                                                @endif
+                                                </td>
+                                                
+                                                <td>@if(count($transaction->feb) > $i)
+                                                    {{
+
+                                                    $transaction->feb[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->mar) > $i)
+                                                    {{
+
+                                                    $transaction->mar[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->apr) > $i)
+                                                    {{
+
+                                                    $transaction->apr[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->may) > $i)
+                                                    {{
+
+                                                    $transaction->may[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->jun) > $i)
+                                                    {{
+
+                                                    $transaction->jun[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->jul) > $i)
+                                                    {{
+
+                                                    $transaction->jul[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->aug) > $i)
+                                                    {{
+
+                                                    $transaction->aug[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->sep) > $i)
+                                                    {{
+
+                                                    $transaction->sep[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->oct) > $i)
+                                                    {{
+
+                                                    $transaction->oct[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->nov) > $i)
+                                                    {{
+
+                                                    $transaction->nov[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($transaction->dec) > $i)
+                                                    {{
+
+                                                    $transaction->dec[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>8</td>
+
+                                            </tr>
+
+                                            @endfor
+                                            @endisset
+                                            @endisset 
+                                                            </tbody>
+
+                                    
+                                        </table>
+
+
+
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <th>  
+                                                <a class="" data-toggle="collapse" href="#multiCollapseMarketing" role="button" aria-expanded="false" aria-controls="multiCollapseMarketing">+ </a>
+
+                                             </th>
+                                            <th> Marketing</th>
+
+                                        </thead>
+
+                                                            <tbody class="collapse multi-collapse" id="multiCollapseMarketing">
+                                                                 @isset($marketingTransaction)
+                                            @isset($maxMarketing)
+
+                                                @for ($i = 0; $i < $maxMarketing; $i++)
+                                            <tr>
+                                                <td>></td>
+                                                <td>  </td>
+
+                                           
+                                                <td>@if(count($marketingTransaction->jan) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->jan[$i]->transaction_amount
+                                                    }}
+                                                @else 
+
+                                                @endif
+                                                </td>
+                                                
+                                                <td>@if(count($marketingTransaction->feb) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->feb[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->mar) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->mar[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->apr) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->apr[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->may) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->may[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->jun) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->jun[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->jul) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->jul[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->aug) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->aug[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->sep) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->sep[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->oct) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->oct[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->nov) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->nov[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($marketingTransaction->dec) > $i)
+                                                    {{
+
+                                                    $marketingTransaction->dec[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>8</td>
+
+                                            </tr>
+
+                                            @endfor
+                                            @endisset
+                                            @endisset 
+                                                            </tbody>
+
+                                    
+                                        </table>
+
+<!-- the beginning of the Equipamiento equipamiento  -->
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <th>  
+                                                <a class="" data-toggle="collapse" href="#multiCollapseEquipamiento" role="button" aria-expanded="false" aria-controls="multiCollapseEquipamiento">+ </a>
+                                                &nbsp
+                                             </th>
+                                            <th>Equipamiento</th>
+
+                                        </thead>
+
+                                                            <tbody class="collapse multi-collapse" id="multiCollapseEquipamiento">
+                                                                 @isset($equipamientoTransaction)
+                                            @isset($maxEquipamiento)
+
+                                                @for ($i = 0; $i < $maxEquipamiento; $i++)
+                                            <tr>
+                                                <td>-</td>
+                                                <td>  </td>
+
+                                           
+                                                <td>@if(count($equipamientoTransaction->jan) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->jan[$i]->transaction_amount
+                                                    }}
+                                                @else 
+
+                                                @endif
+                                                </td>
+                                                
+                                                <td>@if(count($equipamientoTransaction->feb) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->feb[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->mar) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->mar[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->apr) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->apr[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->may) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->may[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->jun) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->jun[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->jul) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->jul[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->aug) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->aug[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->sep) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->sep[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->oct) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->oct[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->nov) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->nov[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($equipamientoTransaction->dec) > $i)
+                                                    {{
+
+                                                    $equipamientoTransaction->dec[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>8</td>
+
+                                            </tr>
+
+                                            @endfor
+                                            @endisset
+                                            @endisset 
+                                                            </tbody>
+
+                                    
+                                        </table>
+
+<!-- Elcort transaction begins here with the table -->
+
+                                           <table class="table table-bordered">
+                                        <thead>
+                                            <th>  
+                                                <a class="" data-toggle="collapse" href="#multiCollapseelCortTransactions" role="button" aria-expanded="false" aria-controls="multiCollapseelCortTransactions">+ </a>
+                                                &nbsp&nbsp
+                                             </th>
+                                            <th>El Corte Inglés</th>
+                                            
+                                        </thead>
+
+                                                            <tbody class="collapse multi-collapse" id="multiCollapseelCortTransactions">
+                                                                 @isset($elCortTransactions)
+                                            @isset($maxelCort)
+
+                                                @for ($i = 0; $i < $maxelCort; $i++)
+                                            <tr>
+                                                <td>-></td>
+                                                <td>  </td>
+
+                                           
+                                                <td>@if(count($elCortTransactions->jan) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->jan[$i]->transaction_amount
+                                                    }}
+                                                @else 
+
+                                                @endif
+                                                </td>
+                                                
+                                                <td>@if(count($elCortTransactions->feb) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->feb[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->mar) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->mar[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->apr) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->apr[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->may) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->may[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->jun) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->jun[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->jul) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->jul[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->aug) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->aug[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->sep) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->sep[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->oct) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->oct[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->nov) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->nov[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>@if(count($elCortTransactions->dec) > $i)
+                                                    {{
+
+                                                    $elCortTransactions->dec[$i]->transaction_amount
+                                                    }}
+                                                @endif</td>
+                                                <td>8</td>
+
+                                            </tr>
+
+                                            @endfor
+                                            @endisset
+                                            @endisset 
+                                                            </tbody>
+
                                     
                                         </table>
                                            
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                                    <div ">
-                                                        <table class="table  table-bordered ">
-                                                            <thead >
-                                                                <th> &nbsp</th>
-                                                                <th>Leasing</th>
-                                                                <th>12</th>
-                                                                <th>23.4 </th>
-                                                                <th>13</th>
-                                                                <th>44</th>
-                                                                <th>7</th>
-                                                                <th>19</th>
-                                                                <th>20</th>
-                                                                <th>20</th>
-                                                                <th>9</th>
-                                                                <th>23</th>
-                                                                <th>45</th>
-                                                                <th>5</th>
-                                                                <th>8</th>
-                                                            </thead>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                 </div>
                             </div>
                         </div>

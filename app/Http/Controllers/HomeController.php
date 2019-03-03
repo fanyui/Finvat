@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 use App\User;
 use App\Account;
@@ -104,17 +106,60 @@ class HomeController extends Controller
     public function financialPosition(Request $request)
     {
       $category = Category::get();
-      $account = Account::get();
+      $account = Account::where("user_id", auth()->user()->id)->get();
       if(empty($account))
         return redirect('/home');
-      // foreach ($category as $c) {
-      // run throught the possible types of categories and check inside the list of result returned from the api to verify that it found inside so as to know wich category it belongs to 
-      // }
 
+     $year = $request->query('year', 2019);
 
+      $maketingTransactions = $this->getTransactionsByCategory("Marketing", $year);
+      $transaction = $this->getTransactionsByCategory("Insurance", $year); //computing for insurance not available yet
+      $elCortTransactions = $this->getTransactionsByCategory("El Corte Inglés", $year);
+      $equipamientoTransaction = $this->getTransactionsByCategory("Equipamiento", $year);
 
       
-      return view("dashboard.finantialPosition");
+      return view("dashboard.finantialPosition")
+      ->with("marketingTransaction", $maketingTransactions["transaction"]) ->with('maxMarketing',$maketingTransactions["maximum"])
+      ->with("transaction", $transaction["transaction"]) ->with('max',$transaction["maximum"])
+      ->with("elCortTransactions", $elCortTransactions["transaction"]) ->with('maxelCort',$elCortTransactions["maximum"])
+      ->with("equipamientoTransaction", $equipamientoTransaction["transaction"]) ->with('maxEquipamiento',$equipamientoTransaction["maximum"]);
+    }
+
+    public function getTransactionsByCategory($value=null, $year)
+    {
+      
+      $janT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 1)->get();
+      $febT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 2)->get();
+      $marT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 3)->get();
+      $aprT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 4)->get();
+
+      $mayT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 5)->get();
+      $junT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 6)->get();
+      $julT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 7)->get();
+      $augT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 8)->get();
+      $sepT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 9)->get();
+      $octT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 10)->get();
+      $novT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 11)->get();
+      $decT = Transaction::where("user_id", auth()->user()->id)->where("parent_category", $value)->where(DB::raw("YEAR(transaction_value)"), $year)->where(DB::raw("MONTH(transaction_value)"), 12)->get();
+
+      $maximum = max( array(count($janT), count($febT), count($marT), count($aprT), count($mayT),count($junT), count($julT), count($augT), count($sepT), count($octT), count($novT), count($decT) ));
+      // return $febT;
+      // $transactions = Transaction::where("user_id", auth()->user()->id)->where(DB::raw("YEAR(transaction_value)"), 2018)->get();
+      $transactions = (object) array('jan' =>$janT ,
+        'feb' => $febT, 
+        'mar' => $marT, 
+        'apr' => $aprT,
+        'may' => $mayT,
+        'jun' => $junT,
+        'jul' => $julT,
+        'aug' => $augT,
+        'sep' => $sepT,
+        'oct' => $octT,
+        'nov' => $novT,
+        'dec' => $decT
+
+         );
+      return $arrayName = array('transaction' => $transactions, 'maximum' =>$maximum);
     }
 
     //financial plan  method 

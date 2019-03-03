@@ -368,6 +368,8 @@ class GeneralController extends Controller
 		                // $table->string('bank_id'); //foriegn key  from bank
 		            // $table->string('account_id');//forign key from client
 		            // $table->string('client_id');//forign key from client
+		    $transactn->user_id =  $this->usr;
+
 
 		    $transactn->save();
 		    // dd("transaction id id ". $transactn->id);
